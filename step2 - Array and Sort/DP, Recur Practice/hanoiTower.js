@@ -9,9 +9,9 @@ const hanoi = function(n, from, to, extra, count) {
         console.log(`${from}에서 ${to}로 이동!`)
         
     if (n > 1) {
-        hanoi(n-1, from, extra, to, count++);
-        hanoi(1, from, to, extra, count++);
-        hanoi(n-1, extra, to, from, count++);
+        hanoi(n-1, from, extra, to);
+        hanoi(1, from, to, extra);
+        hanoi(n-1, extra, to, from);
     }
 }
     

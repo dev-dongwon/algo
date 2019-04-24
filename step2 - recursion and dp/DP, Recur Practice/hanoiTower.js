@@ -4,15 +4,21 @@
 // 2. 자신보다 작은 원반이 그 아래에 놓일 수 없습니다.
 //    예를 들어 원반 3이 축에 있다면 원반 3 밑에 있는 원반은 모두 3보다 큰 숫자로 되어 있어야 합니다.
 
-const hanoi = function(n, from, to, extra, count) {
+let count = 0;
+
+const hanoi = function(n, from, to, extra) {
+    
+    console.log(`${count} 번 실행`)
+    count++;
+
     if (n == 1)
         console.log(`${from}에서 ${to}로 이동!`)
-        
+    
     if (n > 1) {
         hanoi(n-1, from, extra, to);
         hanoi(1, from, to, extra);
         hanoi(n-1, extra, to, from);
     }
 }
-    
-hanoi(3, "A", "B", "C", 1);
+
+hanoi(2, "A", "B", "C");
